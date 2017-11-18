@@ -1,5 +1,6 @@
 # calendar-selector
 <!-- 2017/11/18 Create By Wanlixin -->
+```
 <template>
 	<div class="calendar">
 		<!-- 星期 -->
@@ -167,3 +168,4 @@ $validDateColor = #222 // 有效日期（过去的日子）的表示颜色
 .appoint
 	font-size .24rem; // 12px
 </style>
+```
