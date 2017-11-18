@@ -64,11 +64,11 @@ export default {
     },
     currMonth: {
       type: Number,
-      default: new Date().getFullYear(),
+      default: new Date().getMonth() + 1,
     },
     currDay: {
       type: Number,
-      default: new Date().getFullYear(),
+      default: new Date().getDate(),
     },
   },
   mounted () {
