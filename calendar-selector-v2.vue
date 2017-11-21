@@ -79,19 +79,19 @@
 			this.initDatePicker(this.controlsMonth);
 		},
 		methods: {
-			initDatePicker (month, yeah = 2017) {
+			initDatePicker (month, year = 2017) {
 				this.curMonthDays = [];
-				let curMonthDaysLen = new Date(yeah, month, 0).getDate();
+				let curMonthDaysLen = new Date(year, month, 0).getDate();
 				for(let i = 0; i < curMonthDaysLen; i++) {
 					this.curMonthDays.push({day: i + 1, appointed: false});
 				}
-				this.lastMonthDays = new Date(yeah, month - 1, 0).getDate();
+				this.lastMonthDays = new Date(year, month - 1, 0).getDate();
 				this.submitMonthFormat = month < 10 ? `0${month}` : month;
-				this.currMonthIsWeek = new Date(`${yeah}-${this.submitMonthFormat}-01`).getDay();
+				this.currMonthIsWeek = new Date(`${year}-${this.submitMonthFormat}-01`).getDay();
 				this.beforeDays = this.currMonthIsWeek;
 				this.totalRow = this.beforeDays + this.curMonthDays.length > this.totalRow * 7 ? 6 : 5;
 				this.afterDays = this.totalRow * 7 - this.currMonthIsWeek - this.curMonthDays.length;
-				this.getByCusIdAndDate(`${this.currYear}-${this.submitMonthFormat}`);
+				this.getByCusIdAndDate(`${year}-${this.submitMonthFormat}`);
 			},
 			lastMonth () { // 点击上一月
 				this.controlsMonth --;
